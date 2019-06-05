@@ -1,0 +1,76 @@
+<div class=" container-fluid" style="background-color:red;">
+  <header class="main-header" style="color:white">
+    <h4>News API</h4>
+  </header>
+</div>
+<div class="container">
+  <div class="btn-toolbar" role="toolbar">
+    <!-- <div class="btn-group mr-2" role="group">
+      <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.apple)">Apple</button>
+      <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.india)">India</button>
+      <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.cricket)">Cricket</button>
+      <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.oscar)">Oscar 2k19</button>
+      <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.technology)">Technology</button>
+      <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.international)">International</button>
+    </div> -->
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.apple)">Apple</button>      
+      </li>
+      <li class="nav-item active">
+        <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.india)">India</button>      
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.cricket)">Cricket</button>      
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.oscar)">Oscar 2k19</button>      
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.technology)">Technology</button>        
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btnClr" (click)="getSpecificNews(newsNameList.international)">International</button>        
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  </div>
+
+  <div class="card bg-light text-dark mt-2 mb-2" *ngFor="let data of newsFeedList;let i = index;let odd=odd; let even=even;">
+    <div class="card-body">
+      <div class="row">
+        <!-- <div class="card-header">
+            {{data.title}}
+        </div> -->
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" *ngIf=even>
+          <h4 class="card-title">{{data.title}}</h4>
+          <h6>news by: {{data.author}}</h6>
+          {{data.description}}
+
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" *ngIf=even>
+          <img [src]="data.urlToImage" style="    width: 100%;
+          height: 100%;">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" *ngIf=odd>
+          <img [src]="data.urlToImage" style="width: 100%;height: 100%;">
+        </div>
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" *ngIf=odd>
+          <h4 class="card-title">{{data.title}}</h4>
+          <h6>news by: {{data.author}}</h6>
+          {{data.description}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
